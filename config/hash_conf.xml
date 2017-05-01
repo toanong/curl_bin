@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<encryption_config>
+	<DBMS>PostgreSQL</DBMS>
+	<DatabaseReaderConnection>
+		<database>postgres</database>
+		<schema>tz</schema>
+		<table>normalized_data</table>
+		<url>jdbc:postgresql://127.0.0.1:5432</url>
+		<user>site_a</user>
+		<password>testpass</password>
+	</DatabaseReaderConnection>
+
+	<DatabaseWriterConnection>
+		<database>postgres</database>
+		<schema>tz</schema>
+		<url>jdbc:postgresql://127.0.0.1:5432</url>
+		<user>site_a</user>
+		<password>testpass</password>
+	</DatabaseWriterConnection>
+
+	<DatabaseMap>
+		
+
+		<MappedPair algorithm="PPRL" attr="id" clear-text="yes">
+			<read_col>id</read_col>
+			<write_col>id</write_col>	
+		</MappedPair>
+
+		<MappedPair algorithm="PPRL" attr="first name">
+			<read_col>n_first_name</read_col>
+			<write_col>h_first_name</write_col>
+		</MappedPair>
+
+		<MappedPair algorithm="PPRL" attr="last name">
+			<read_col>n_last_name</read_col>
+			<write_col>h_last_name</write_col>
+		</MappedPair>
+
+		<MappedPair algorithm="PPRL" attr="email">
+			<read_col>n_email</read_col>
+			<write_col>h_email</write_col>
+		</MappedPair>
+
+		<MappedPair algorithm="PPRL" attr="SSN">
+			<read_col>n_snn</read_col>
+			<write_col>h_ssn</write_col>
+		</MappedPair>
+
+		<MappedPair algorithm="PPRL" attr="Address">
+			<read_col>n_address1</read_col>
+			<write_col>h_address1</write_col>
+		</MappedPair>
+		
+		<MappedPair algorithm="PPRL" attr="Date of birth">
+			<read_col>n_date_of_birth</read_col>
+			<write_col>h_date_of_birth</write_col>
+		</MappedPair>
+		
+		<MappedPair algorithm="PPRL" attr="Blocking 2" clear-text="hash-only">
+			<read_col>blocking_2</read_col>
+			<write_col>h_blocking_2</write_col>
+		</MappedPair>
+		
+		<MappedPair algorithm="PPRL" attr="Blocking 3" clear-text="hash-only">
+			<read_col>blocking_3</read_col>
+			<write_col>h_blocking_3</write_col>
+		</MappedPair>
+
+	</DatabaseMap>
+
+	<Blocking>
+		<read_col>blocking_1</read_col>
+		<write_col>h_blocking_1</write_col>
+	</Blocking>
+
+</encryption_config>
+
+
+
